@@ -1,0 +1,6 @@
+{
+    "require": {
+        "predis/predis": "^2.0",
+        "vlucas/phpdotenv": "^2.2"
+    }
+}

@@ -1,3 +1,6 @@
+<?php
+  require_once "classes/connect.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +10,6 @@
     <title>RVA</title>
 </head>
 <body>
-    
+
 </body>
 </html>
