@@ -6,6 +6,7 @@ $redisClient = new Predis\Client([
     "port" => $_SERVER['REDIS_PORT'],
 ]);
 $responses = $redisClient->transaction()->get('test')->execute();
+eval(\Psy\sh());
 
 if(!empty($responses)) {
     echo "<h2>Test responses is : '$responses[0]'.</h2>";

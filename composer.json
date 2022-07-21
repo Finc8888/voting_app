@@ -1,6 +1,8 @@
 {
     "require": {
         "predis/predis": "^2.0",
-        "vlucas/phpdotenv": "^2.2"
+        "vlucas/phpdotenv": "^2.2",
+        "psy/psysh": "*",
+        "monolog/monolog": "1.17.*"
     }
 }
