@@ -55,8 +55,8 @@ class Article {
             "votes" => 1
         ]);
 
-        $con->zadd("score:", $article, $now + (float) self::VOTE_SCORE);
-        $con->zadd("time:", $article, $now);
+        $con->zadd("score:", $now + self::VOTE_SCORE, $article);
+        $con->zadd("time:", $now, $article);
         return $articleId;
     }
 
@@ -67,7 +67,7 @@ class Article {
     public static function getArticles($con, $page, $order="score:") {
         $start = ($page - 1) * self::ARTICLES_PER_PAGE;
         $end = $start + self::ARTICLES_PER_PAGE -1;
-        $ids = $con->zrevrang($order, $start, $end);
+        $ids = $con->zrevrange($order, $start, $end);
         $articles = [];
         foreach ($ids as $id) {
             $articleData = $con->hgetall($id);
